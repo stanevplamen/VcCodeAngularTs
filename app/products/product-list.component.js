@@ -51,7 +51,7 @@ System.register(['angular2/core', 'angular2/router', './product-filter.pipe', '.
                 ProductListComponent.prototype.onRatingClicked = function (message) {
                     this.pageTitle = 'Product List: ' + message;
                 };
-                ProductListComponent.pazoStatic = 'Pazo Static';
+                ProductListComponent.pazoStatic = 'Pazo Static with git';
                 ProductListComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/products/product-list.component.html',
