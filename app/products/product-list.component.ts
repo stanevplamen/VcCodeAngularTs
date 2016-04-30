@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
     errorMessage: string;
     products: IProduct[];
     
-    static pazoStatic: string = 'Pazo Static with git';
+    static pazoStatic: string = 'Pazo Static with git push and pull';
 
 
     constructor(private _productService: ProductService) {
