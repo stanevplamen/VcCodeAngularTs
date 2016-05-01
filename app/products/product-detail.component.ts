@@ -37,5 +37,9 @@ export class ProductDetailComponent implements OnInit {
     onBack(): void {
         this._router.navigate(['Products']);
     }
+    
+    onRatingClicked(message: string): void {
+        console.log('This is a click from the product detail: ' + message);
+    }
 
 }

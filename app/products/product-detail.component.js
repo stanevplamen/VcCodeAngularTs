@@ -49,6 +49,9 @@ System.register(['angular2/core', 'angular2/router', './product.service', '../sh
                 ProductDetailComponent.prototype.onBack = function () {
                     this._router.navigate(['Products']);
                 };
+                ProductDetailComponent.prototype.onRatingClicked = function (message) {
+                    console.log('This is a click from the product detail: ' + message);
+                };
                 ProductDetailComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/products/product-detail.component.html',
