@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, tooltip_directive_1;
-    var BoardsComponent;
+    var core_1, router_1;
+    var BikesComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -19,31 +19,28 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
             },
             function (router_1_1) {
                 router_1 = router_1_1;
-            },
-            function (tooltip_directive_1_1) {
-                tooltip_directive_1 = tooltip_directive_1_1;
             }],
         execute: function() {
-            BoardsComponent = (function () {
-                function BoardsComponent() {
-                    console.log("This is " + BoardsComponent.pazoStatic);
+            BikesComponent = (function () {
+                function BikesComponent() {
+                    console.log("This is " + BikesComponent.pazoStatic);
                 }
-                BoardsComponent.prototype.toggleImage = function () {
+                BikesComponent.prototype.toggleImage = function () {
                 };
-                BoardsComponent.prototype.ngOnInit = function () {
+                BikesComponent.prototype.ngOnInit = function () {
                 };
-                BoardsComponent.pazoStatic = 'boards static';
-                BoardsComponent = __decorate([
+                BikesComponent.pazoStatic = 'bikes static';
+                BikesComponent = __decorate([
                     core_1.Component({
-                        templateUrl: 'app/boards/boards.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES, tooltip_directive_1.TooltipDirective]
+                        templateUrl: 'app/bikes/bikes.component.html',
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], BoardsComponent);
-                return BoardsComponent;
+                ], BikesComponent);
+                return BikesComponent;
             }());
-            exports_1("BoardsComponent", BoardsComponent);
+            exports_1("BikesComponent", BikesComponent);
         }
     }
 });
-//# sourceMappingURL=boards.component.js.map
+//# sourceMappingURL=bikes.component.js.map
