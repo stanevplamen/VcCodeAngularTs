@@ -24,13 +24,3 @@ export class TooltipDirective implements OnInit {
     }
 
 }
-
-
-@Directive({
-    selector: '[myHighlight]'
-})
-export class HighlightDirective {
-    constructor(el: ElementRef) {
-       el.nativeElement.style.backgroundColor = 'yellow';
-    }
-}

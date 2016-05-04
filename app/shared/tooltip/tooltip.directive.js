@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var TooltipDirective, HighlightDirective;
+    var TooltipDirective;
     return {
         setters:[
             function (core_1_1) {
@@ -43,19 +43,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 return TooltipDirective;
             }());
             exports_1("TooltipDirective", TooltipDirective);
-            HighlightDirective = (function () {
-                function HighlightDirective(el) {
-                    el.nativeElement.style.backgroundColor = 'yellow';
-                }
-                HighlightDirective = __decorate([
-                    core_1.Directive({
-                        selector: '[myHighlight]'
-                    }), 
-                    __metadata('design:paramtypes', [core_1.ElementRef])
-                ], HighlightDirective);
-                return HighlightDirective;
-            }());
-            exports_1("HighlightDirective", HighlightDirective);
         }
     }
 });
