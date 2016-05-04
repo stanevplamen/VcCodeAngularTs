@@ -26,6 +26,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
         execute: function() {
             BoardsComponent = (function () {
                 function BoardsComponent() {
+                    this.titleForTooltip = 'pazos tooltips';
                     console.log("This is " + BoardsComponent.pazoStatic);
                 }
                 BoardsComponent.prototype.toggleImage = function () {

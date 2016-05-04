@@ -10,7 +10,7 @@ import {TooltipDirective} from '../shared/tooltip/tooltip.directive';
 export class BoardsComponent implements OnInit {
     
     static pazoStatic: string = 'boards static';
-
+    titleForTooltip: string = 'pazos tooltips';
 
     constructor() {
         console.log(`This is ${BoardsComponent.pazoStatic}`);

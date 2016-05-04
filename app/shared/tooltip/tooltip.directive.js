@@ -20,9 +20,20 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             TooltipDirective = (function () {
                 function TooltipDirective(el) {
-                    el.nativeElement.style.backgroundColor = 'blue';
-                    jQuery(el.nativeElement).tooltip({ title: 'test' });
+                    this.el = el;
                 }
+                TooltipDirective.prototype.ngOnInit = function () {
+                    // this.el.nativeElement.style.backgroundColor = 'blue';
+                    this.options = jQuery.extend({
+                        delay: 420
+                    }, this.options);
+                    jQuery(this.el.nativeElement).tooltip(this.options);
+                    console.log(this.options);
+                };
+                __decorate([
+                    core_1.Input('tooltip-widget'), 
+                    __metadata('design:type', Object)
+                ], TooltipDirective.prototype, "options", void 0);
                 TooltipDirective = __decorate([
                     core_1.Directive({
                         selector: '[tooltip-widget]'
