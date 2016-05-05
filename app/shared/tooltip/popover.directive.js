@@ -23,11 +23,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.el = el;
                 }
                 PopoverDirective.prototype.ngOnInit = function () {
-                    // this.el.nativeElement.style.backgroundColor = 'blue';
                     this.options = jQuery.extend({
                         trigger: 'hover'
                     }, this.options);
-                    jQuery(this.el.nativeElement).popover(this.options);
+                    $(this.el.nativeElement).popover(this.options);
                     console.log(this.options);
                 };
                 __decorate([

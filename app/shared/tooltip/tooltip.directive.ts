@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input, OnInit } from 'angular2/core';
-declare var jQuery:any;
 
 @Directive({
     selector: '[tooltip-widget]'
@@ -19,7 +18,7 @@ export class TooltipDirective implements OnInit {
             delay: 420
         }, this.options);
         
-        jQuery(this.el.nativeElement).tooltip(this.options);
+        $(this.el.nativeElement).tooltip(this.options);
         console.log(this.options);
     }
 

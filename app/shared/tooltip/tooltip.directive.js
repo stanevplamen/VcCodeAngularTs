@@ -27,7 +27,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.options = jQuery.extend({
                         delay: 420
                     }, this.options);
-                    jQuery(this.el.nativeElement).tooltip(this.options);
+                    $(this.el.nativeElement).tooltip(this.options);
                     console.log(this.options);
                 };
                 __decorate([
