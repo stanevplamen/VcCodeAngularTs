@@ -5,6 +5,7 @@ import {TooltipDirective} from '../shared/tooltip/tooltip.directive';
 import {PopoverDirective} from '../shared/tooltip/popover.directive';
 
 declare var toastr;
+declare var modal;
 
 @Component({
     templateUrl: 'app/boards/boards.component.html',

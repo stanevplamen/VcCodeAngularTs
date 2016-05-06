@@ -12,7 +12,6 @@ export class ToastrService  {
     constructor() { }
 
     show(type:string, message, options?: any) {
-        
         toastr.options = jQuery.extend({
             "closeButton": false,
             "debug": false,
@@ -31,6 +30,6 @@ export class ToastrService  {
             "hideMethod": "fadeOut"
         }, options);
                 
-      toastr[type](message);
+      toastr[type](message);       
     }
 }
