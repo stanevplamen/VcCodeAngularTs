@@ -5,6 +5,7 @@ declare var Slick;
 
 @Component({
     templateUrl: 'app/surfs/surfs.component.html',
+    styleUrls: ['app/surfs/slickgrid.example.css'],
     directives: [ROUTER_DIRECTIVES]
 })
 export class SurfsComponent implements OnInit {

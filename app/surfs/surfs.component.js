@@ -88,6 +88,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 SurfsComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/surfs/surfs.component.html',
+                        styleUrls: ['app/surfs/slickgrid.example.css'],
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
