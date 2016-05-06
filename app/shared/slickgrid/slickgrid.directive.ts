@@ -19,30 +19,33 @@ export class SlickGridDirective implements OnInit {
     
      ngOnInit(): void {
      
-        this.data.data = $.extend({
+        this.data.options = $.extend({
             enableCellNavigation: true,
             enableColumnReorder: false,
             multiColumnSort: true
-        }, this.data.data );
+        }, this.data.options );
         
-      this.grid = new Slick.Grid("#myGrid", this.data.data , this.data.columns , this.data.options);
-            this.grid.onSort.subscribe(function (e, args) {
+        this.grid = new Slick.Grid(this.el.nativeElement, this.data.data , this.data.columns , this.data.options);
+        
+        this.grid.onSort.subscribe(function (e, args) {
+            
             var cols = args.sortCols;
-            this.data.data .sort(function (dataRow1, dataRow2) {
+            this.data.data.sort(function (dataRow1, dataRow2) {
+                
                 for (var i = 0, l = cols.length; i < l; i++) {
-                var field = cols[i].sortCol.field;
-                var sign = cols[i].sortAsc ? 1 : -1;
-                var value1 = dataRow1[field], value2 = dataRow2[field];
-                var result = (value1 == value2 ? 0 : (value1 > value2 ? 1 : -1)) * sign;
-                if (result != 0) {
-                    return result;
-                }
+                    var field = cols[i].sortCol.field;
+                    var sign = cols[i].sortAsc ? 1 : -1;
+                    var value1 = dataRow1[field], value2 = dataRow2[field];
+                    var result = (value1 == value2 ? 0 : (value1 > value2 ? 1 : -1)) * sign;
+                    if (result != 0) {
+                        return result;
+                    }
                 }
                 return 0;
             });
             this.grid.invalidate();
             this.grid.render();
-            });
+            }.bind(this));
     }
 
 }

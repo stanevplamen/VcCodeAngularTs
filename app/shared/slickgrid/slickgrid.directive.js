@@ -25,12 +25,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.el = el;
                 }
                 SlickGridDirective.prototype.ngOnInit = function () {
-                    this.data.data = $.extend({
+                    this.data.options = $.extend({
                         enableCellNavigation: true,
                         enableColumnReorder: false,
                         multiColumnSort: true
-                    }, this.data.data);
-                    this.grid = new Slick.Grid("#myGrid", this.data.data, this.data.columns, this.data.options);
+                    }, this.data.options);
+                    this.grid = new Slick.Grid(this.el.nativeElement, this.data.data, this.data.columns, this.data.options);
                     this.grid.onSort.subscribe(function (e, args) {
                         var cols = args.sortCols;
                         this.data.data.sort(function (dataRow1, dataRow2) {
@@ -47,7 +47,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         });
                         this.grid.invalidate();
                         this.grid.render();
-                    });
+                    }.bind(this));
                 };
                 __decorate([
                     core_1.Input('slickgrid-widget'), 
