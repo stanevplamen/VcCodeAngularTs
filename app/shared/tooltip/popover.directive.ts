@@ -1,3 +1,5 @@
+// https://github.com/twbs/bootstrap/tree/master/js
+
 import { Directive, ElementRef, Input, OnInit } from 'angular2/core';
 
 @Directive({

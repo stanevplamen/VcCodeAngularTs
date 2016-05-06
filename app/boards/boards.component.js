@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.directive', '../shared/tooltip/popover.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.service', '../shared/tooltip/tooltip.directive', '../shared/tooltip/popover.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, tooltip_directive_1, popover_directive_1;
+    var core_1, router_1, toastr_service_1, tooltip_directive_1, popover_directive_1;
     var BoardsComponent;
     return {
         setters:[
@@ -20,6 +20,9 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
             function (router_1_1) {
                 router_1 = router_1_1;
             },
+            function (toastr_service_1_1) {
+                toastr_service_1 = toastr_service_1_1;
+            },
             function (tooltip_directive_1_1) {
                 tooltip_directive_1 = tooltip_directive_1_1;
             },
@@ -28,7 +31,8 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
             }],
         execute: function() {
             BoardsComponent = (function () {
-                function BoardsComponent() {
+                function BoardsComponent(_toastr) {
+                    this._toastr = _toastr;
                     this.titleForTooltip = 'pazos tooltips';
                     this.titleForPopover = 'pazos popover on click';
                     console.log("This is " + BoardsComponent.pazoStatic);
@@ -37,13 +41,16 @@ System.register(['angular2/core', 'angular2/router', '../shared/tooltip/tooltip.
                 };
                 BoardsComponent.prototype.ngOnInit = function () {
                 };
+                BoardsComponent.prototype.showToastr = function (message) {
+                    this._toastr.show("warning", "warning message", { "progressBar": true });
+                };
                 BoardsComponent.pazoStatic = 'boards static';
                 BoardsComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/boards/boards.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES, tooltip_directive_1.TooltipDirective, popover_directive_1.PopoverDirective]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [toastr_service_1.ToastrService])
                 ], BoardsComponent);
                 return BoardsComponent;
             }());

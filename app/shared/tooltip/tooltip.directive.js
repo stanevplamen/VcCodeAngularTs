@@ -1,3 +1,4 @@
+// https://github.com/twbs/bootstrap/tree/master/js
 System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
@@ -24,7 +25,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 }
                 TooltipDirective.prototype.ngOnInit = function () {
                     // this.el.nativeElement.style.backgroundColor = 'blue';
-                    this.options = jQuery.extend({
+                    this.options = $.extend({
                         delay: 420
                     }, this.options);
                     $(this.el.nativeElement).tooltip(this.options);

@@ -1,3 +1,5 @@
+// https://github.com/twbs/bootstrap/tree/master/js
+
 import { Directive, ElementRef, Input, OnInit } from 'angular2/core';
 
 @Directive({
@@ -14,7 +16,7 @@ export class TooltipDirective implements OnInit {
      ngOnInit(): void {
         // this.el.nativeElement.style.backgroundColor = 'blue';
         
-        this.options = jQuery.extend({
+        this.options = $.extend({
             delay: 420
         }, this.options);
         

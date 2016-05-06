@@ -1,8 +1,10 @@
 import { Component, OnInit }  from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
+import { ToastrService } from '../shared/toastr/toastr.service';
 import {TooltipDirective} from '../shared/tooltip/tooltip.directive';
 import {PopoverDirective} from '../shared/tooltip/popover.directive';
 
+declare var toastr;
 
 @Component({
     templateUrl: 'app/boards/boards.component.html',
@@ -14,7 +16,7 @@ export class BoardsComponent implements OnInit {
     titleForTooltip: string = 'pazos tooltips';
     titleForPopover: string = 'pazos popover on click';
 
-    constructor() {
+    constructor(private _toastr: ToastrService) {
         console.log(`This is ${BoardsComponent.pazoStatic}`);
     }
 
@@ -24,5 +26,9 @@ export class BoardsComponent implements OnInit {
 
     ngOnInit(): void {
        
+    }
+    
+    showToastr(message: string): void {
+        this._toastr.show("warning", "warning message", {"progressBar": true});
     }
 }
