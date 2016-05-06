@@ -1,4 +1,5 @@
 // https://github.com/CodeSeven/toastr
+// http://codeseven.github.io/toastr/demo.html
 System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;

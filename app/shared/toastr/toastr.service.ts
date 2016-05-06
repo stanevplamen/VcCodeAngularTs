@@ -1,4 +1,5 @@
 // https://github.com/CodeSeven/toastr
+// http://codeseven.github.io/toastr/demo.html
 
 import { Injectable, OnInit } from 'angular2/core';
 import { Http, Response } from 'angular2/http';
