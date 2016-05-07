@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.service', '../shared/tooltip/tooltip.directive', '../shared/tooltip/popover.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.service', '../shared/tooltip/tooltip.directive', '../shared/tooltip/popover.directive', '../shared/typeahead/typeahead.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.se
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, toastr_service_1, tooltip_directive_1, popover_directive_1;
+    var core_1, router_1, toastr_service_1, tooltip_directive_1, popover_directive_1, typeahead_directive_1;
     var BoardsComponent;
     return {
         setters:[
@@ -28,6 +28,9 @@ System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.se
             },
             function (popover_directive_1_1) {
                 popover_directive_1 = popover_directive_1_1;
+            },
+            function (typeahead_directive_1_1) {
+                typeahead_directive_1 = typeahead_directive_1_1;
             }],
         execute: function() {
             BoardsComponent = (function () {
@@ -40,6 +43,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.se
                 BoardsComponent.prototype.toggleImage = function () {
                 };
                 BoardsComponent.prototype.ngOnInit = function () {
+                    this.typeaheadSource = ["p1a", "p1a", "p1b", "p1b", "p1c", "p1c", "p1c", "p2f", "p2f", "pg", "pgh", "phh",];
                 };
                 BoardsComponent.prototype.showToastr = function (message) {
                     this._toastr.show("warning", "warning message", { "progressBar": true });
@@ -48,7 +52,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/toastr/toastr.se
                 BoardsComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/boards/boards.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES, tooltip_directive_1.TooltipDirective, popover_directive_1.PopoverDirective]
+                        directives: [router_1.ROUTER_DIRECTIVES, tooltip_directive_1.TooltipDirective, popover_directive_1.PopoverDirective, typeahead_directive_1.TypeaheadDirective]
                     }), 
                     __metadata('design:paramtypes', [toastr_service_1.ToastrService])
                 ], BoardsComponent);
