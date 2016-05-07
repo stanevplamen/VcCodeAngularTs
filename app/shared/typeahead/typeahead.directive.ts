@@ -1,4 +1,4 @@
-// https://github.com/twbs/bootstrap/tree/master/js
+// https://github.com/bassjobsen/Bootstrap-3-Typeahead
 
 import { Directive, ElementRef, Input, OnInit } from 'angular2/core';
 
