@@ -3,7 +3,38 @@
 <table width="100%" class="table table-striped table-hover ">
   <tr>
     <td valign="top" width="50%">
-      <div [slickgrid-widget]='{data: data, columns: columns}' style="width:600px;height:500px;"></div>
+      <div [slickgrid-widget]='{data: tableData, columns: columns}' style="width:600px;height:500px;"></div>
     </td>
   </tr>
+</table>
+
+<table [bstable-widget]='{data: tableData, columns: columns}' data-toggle="table">
+    <thead>
+    <tr>
+        <th data-field="title" 
+            data-sortable="true">
+                Name
+        </th>
+        <th data-field="duration" 
+            data-sortable="true">
+                Duration
+        </th>
+        <th data-field="%" 
+            data-sortable="true">
+                Complete
+        </th>
+        <th data-field="start" 
+            data-sortable="true">
+                Start
+        </th>
+        <th data-field="finish" 
+            data-sortable="true">
+                Finish
+        </th>
+        <th data-field="effort-driven" 
+            data-sortable="true">
+                Effort Driven
+        </th>
+    </tr>
+    </thead>
 </table>

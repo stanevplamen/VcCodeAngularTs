@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickgrid.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickgrid.directive', '../shared/bstable/bstable.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickg
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, slickgrid_directive_1;
+    var core_1, router_1, slickgrid_directive_1, bstable_directive_1;
     var SurfsComponent;
     return {
         setters:[
@@ -22,6 +22,9 @@ System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickg
             },
             function (slickgrid_directive_1_1) {
                 slickgrid_directive_1 = slickgrid_directive_1_1;
+            },
+            function (bstable_directive_1_1) {
+                bstable_directive_1 = bstable_directive_1_1;
             }],
         execute: function() {
             SurfsComponent = (function () {
@@ -31,6 +34,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickg
                 SurfsComponent.prototype.toggleImage = function () {
                 };
                 SurfsComponent.prototype.ngOnInit = function () {
+                    // start loading of slick grid and bstable props
                     this.columns = [
                         { id: "title", name: "Title", field: "title", sortable: true },
                         { id: "duration", name: "Duration", field: "duration", sortable: true, formatter: dayFormatter },
@@ -43,14 +47,17 @@ System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickg
                         return value + ' days';
                     }
                     function dateFormatter(row, cell, value, columnDef, dataContext) {
-                        return value.getMonth() + '/' + value.getDate() + '/' + value.getFullYear();
+                        if (typeof value === 'object') {
+                            return value.getMonth() + '/' + value.getDate() + '/' + value.getFullYear();
+                        }
+                        return row.getMonth() + '/' + row.getDate() + '/' + row.getFullYear();
                     }
                     var MS_PER_DAY = 24 * 60 * 60 * 1000;
-                    this.data = [];
+                    this.tableData = [];
                     for (var i = 0; i < 500; i++) {
                         var startDate = new Date(new Date("1/1/1980").getTime() + Math.round(Math.random() * 365 * 25) * MS_PER_DAY);
                         var endDate = new Date(startDate.getTime() + Math.round(Math.random() * 365) * MS_PER_DAY);
-                        this.data[i] = {
+                        this.tableData[i] = {
                             title: "Task " + i,
                             duration: Math.round(Math.random() * 30) + 2,
                             percentComplete: Math.round(Math.random() * 100),
@@ -59,14 +66,14 @@ System.register(['angular2/core', 'angular2/router', '../shared/slickgrid/slickg
                             effortDriven: (i % 5 == 0)
                         };
                     }
-                    console.log('slickgrid data', this.data, this.columns);
+                    // end loading of slick grid and bstable props
                 };
                 SurfsComponent.pazoStatic = 'surfs static';
                 SurfsComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/surfs/surfs.component.html',
-                        styleUrls: ['app/surfs/slickgrid.example.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES, slickgrid_directive_1.SlickGridDirective]
+                        // styleUrls: ['app/surfs/slickgrid.example.css'],
+                        directives: [router_1.ROUTER_DIRECTIVES, slickgrid_directive_1.SlickGridDirective, bstable_directive_1.BsTableDirective]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], SurfsComponent);
