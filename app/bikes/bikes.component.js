@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datepicker.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1;
+    var core_1, router_1, datepicker_directive_1;
     var BikesComponent;
     return {
         setters:[
@@ -19,15 +19,23 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (datepicker_directive_1_1) {
+                datepicker_directive_1 = datepicker_directive_1_1;
             }],
         execute: function() {
             BikesComponent = (function () {
                 function BikesComponent() {
                     console.log("This is " + BikesComponent.pazoStatic);
+                    this.dateValue = "3/13/1983";
                 }
                 BikesComponent.prototype.toggleImage = function () {
                 };
                 BikesComponent.prototype.ngOnInit = function () {
+                };
+                BikesComponent.prototype.onDateClicked = function (dateString) {
+                    console.log(dateString);
+                    console.log(this.dateValue);
                 };
                 BikesComponent.prototype.showModal = function (message) {
                     //https://nakupanda.github.io/bootstrap3-dialog/
@@ -107,7 +115,7 @@ System.register(['angular2/core', 'angular2/router'], function(exports_1, contex
                 BikesComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/bikes/bikes.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        directives: [router_1.ROUTER_DIRECTIVES, datepicker_directive_1.DatepickerDirective]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], BikesComponent);

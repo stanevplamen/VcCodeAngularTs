@@ -3,3 +3,7 @@
 <span (click)='showModal($event)'>'modal test | '</span>
 <span (click)='showModalComplex($event)'>'complex modal test | '</span>
 <span (click)='showModalOther($event)'>'other modal test | '</span>
+
+<div class="input-group date" (dateClicked)='onDateClicked($event)' [datepicker-widget]>
+  <input type="text" [(ngModel)]='dateValue' class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+</div>
