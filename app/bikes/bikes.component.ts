@@ -2,20 +2,24 @@ import { Component, OnInit }  from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 import {DatepickerDirective} from '../shared/datepicker/datepicker.directive';
+import {DatetimepickerDirective} from '../shared/datetimepicker/datetimepicker.directive';
 
 declare var BootstrapDialog;
 
 @Component({
     templateUrl: 'app/bikes/bikes.component.html',
-    directives: [ROUTER_DIRECTIVES, DatepickerDirective]
+    directives: [ROUTER_DIRECTIVES, DatepickerDirective, DatetimepickerDirective]
 })
 export class BikesComponent implements OnInit {
     
     static pazoStatic: string = 'bikes static';
-    dateValue:string
+    dateValue:string;
+    datetimeValue:string;
+    
     constructor() {
         console.log(`This is ${BikesComponent.pazoStatic}`);
         this.dateValue = "3/13/1983";
+        this.datetimeValue = "";
     }
 
     toggleImage(): void {
@@ -30,6 +34,12 @@ export class BikesComponent implements OnInit {
         
         console.log(dateString);
         console.log(this.dateValue);
+    }
+    
+    onDatetimeClicked(datetimeString){
+        
+        console.log(datetimeString);
+        console.log(this.datetimeValue);
     }
     
     showModal(message: string): void {
@@ -50,6 +60,7 @@ export class BikesComponent implements OnInit {
             }]
         });
         
+        console.log(this.datetimeValue);
     }
     
     showModalComplex():void {
