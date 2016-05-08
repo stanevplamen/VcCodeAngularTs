@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datepicker.directive', '../shared/datetimepicker/datetimepicker.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datepicker.directive', '../shared/datetimepicker/datetimepicker.directive', '../shared/spin/spin.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, datepicker_directive_1, datetimepicker_directive_1;
+    var core_1, router_1, datepicker_directive_1, datetimepicker_directive_1, spin_directive_1;
     var BikesComponent;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
             },
             function (datetimepicker_directive_1_1) {
                 datetimepicker_directive_1 = datetimepicker_directive_1_1;
+            },
+            function (spin_directive_1_1) {
+                spin_directive_1 = spin_directive_1_1;
             }],
         execute: function() {
             BikesComponent = (function () {
@@ -32,10 +35,14 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
                     console.log("This is " + BikesComponent.pazoStatic);
                     this.dateValue = "3/13/1983";
                     this.datetimeValue = "";
+                    this.spinTrigger = new core_1.EventEmitter();
                 }
                 BikesComponent.prototype.toggleImage = function () {
                 };
                 BikesComponent.prototype.ngOnInit = function () {
+                };
+                BikesComponent.prototype.triggerTheSpin = function (active) {
+                    this.spinTrigger.emit(active);
                 };
                 BikesComponent.prototype.onDateClicked = function (dateString) {
                     console.log(dateString);
@@ -62,7 +69,6 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
                                 }
                             }]
                     });
-                    console.log(this.datetimeValue);
                 };
                 BikesComponent.prototype.showModalComplex = function () {
                     BootstrapDialog.show({
@@ -124,7 +130,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
                 BikesComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/bikes/bikes.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES, datepicker_directive_1.DatepickerDirective, datetimepicker_directive_1.DatetimepickerDirective]
+                        directives: [router_1.ROUTER_DIRECTIVES, datepicker_directive_1.DatepickerDirective, datetimepicker_directive_1.DatetimepickerDirective, spin_directive_1.SpinDirective]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], BikesComponent);

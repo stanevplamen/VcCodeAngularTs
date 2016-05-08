@@ -1,25 +1,28 @@
-import { Component, OnInit }  from 'angular2/core';
+import { Component, OnInit, EventEmitter }  from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 import {DatepickerDirective} from '../shared/datepicker/datepicker.directive';
 import {DatetimepickerDirective} from '../shared/datetimepicker/datetimepicker.directive';
+import {SpinDirective} from '../shared/spin/spin.directive';
 
 declare var BootstrapDialog;
 
 @Component({
     templateUrl: 'app/bikes/bikes.component.html',
-    directives: [ROUTER_DIRECTIVES, DatepickerDirective, DatetimepickerDirective]
+    directives: [ROUTER_DIRECTIVES, DatepickerDirective, DatetimepickerDirective, SpinDirective]
 })
 export class BikesComponent implements OnInit {
     
     static pazoStatic: string = 'bikes static';
     dateValue:string;
     datetimeValue:string;
+    spinTrigger: EventEmitter<boolean>;
     
     constructor() {
         console.log(`This is ${BikesComponent.pazoStatic}`);
         this.dateValue = "3/13/1983";
         this.datetimeValue = "";
+        this.spinTrigger = new EventEmitter<boolean>();
     }
 
     toggleImage(): void {
@@ -28,6 +31,10 @@ export class BikesComponent implements OnInit {
     
     ngOnInit(): void {
         
+    }
+    
+    triggerTheSpin(active:boolean):void{
+         this.spinTrigger.emit(active);
     }
     
     onDateClicked(dateString){
@@ -60,7 +67,7 @@ export class BikesComponent implements OnInit {
             }]
         });
         
-        console.log(this.datetimeValue);
+
     }
     
     showModalComplex():void {
