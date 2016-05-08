@@ -4,12 +4,13 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 import {DatepickerDirective} from '../shared/datepicker/datepicker.directive';
 import {DatetimepickerDirective} from '../shared/datetimepicker/datetimepicker.directive';
 import {SpinDirective} from '../shared/spin/spin.directive';
+import {TouchspinDirective} from '../shared/touchspin/touchspin.directive';
 
 declare var BootstrapDialog;
 
 @Component({
     templateUrl: 'app/bikes/bikes.component.html',
-    directives: [ROUTER_DIRECTIVES, DatepickerDirective, DatetimepickerDirective, SpinDirective]
+    directives: [ROUTER_DIRECTIVES, DatepickerDirective, DatetimepickerDirective, SpinDirective, TouchspinDirective]
 })
 export class BikesComponent implements OnInit {
     
