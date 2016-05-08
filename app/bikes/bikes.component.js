@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datepicker.directive', '../shared/datetimepicker/datetimepicker.directive', '../shared/spin/spin.directive', '../shared/touchspin/touchspin.directive'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datepicker.directive', '../shared/datetimepicker/datetimepicker.directive', '../shared/spin/spin.directive', '../shared/touchspin/touchspin.directive', '../shared/numeric/numeric.directive'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, datepicker_directive_1, datetimepicker_directive_1, spin_directive_1, touchspin_directive_1;
+    var core_1, router_1, datepicker_directive_1, datetimepicker_directive_1, spin_directive_1, touchspin_directive_1, numeric_directive_1;
     var BikesComponent;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
             },
             function (touchspin_directive_1_1) {
                 touchspin_directive_1 = touchspin_directive_1_1;
+            },
+            function (numeric_directive_1_1) {
+                numeric_directive_1 = numeric_directive_1_1;
             }],
         execute: function() {
             BikesComponent = (function () {
@@ -133,7 +136,7 @@ System.register(['angular2/core', 'angular2/router', '../shared/datepicker/datep
                 BikesComponent = __decorate([
                     core_1.Component({
                         templateUrl: 'app/bikes/bikes.component.html',
-                        directives: [router_1.ROUTER_DIRECTIVES, datepicker_directive_1.DatepickerDirective, datetimepicker_directive_1.DatetimepickerDirective, spin_directive_1.SpinDirective, touchspin_directive_1.TouchspinDirective]
+                        directives: [router_1.ROUTER_DIRECTIVES, datepicker_directive_1.DatepickerDirective, datetimepicker_directive_1.DatetimepickerDirective, spin_directive_1.SpinDirective, touchspin_directive_1.TouchspinDirective, numeric_directive_1.NumericDirective]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], BikesComponent);
