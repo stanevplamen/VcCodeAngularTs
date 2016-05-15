@@ -30,9 +30,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable'], function(
                     this._productUrl = 'api/products/products.json';
                 }
                 ProductService.prototype.getProducts = function () {
+                    var _this = this;
                     return this._http.get(this._productUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+                        .do(function (data) { return _this.handleError; })
                         .catch(this.handleError);
                 };
                 ProductService.prototype.getProduct = function (id) {

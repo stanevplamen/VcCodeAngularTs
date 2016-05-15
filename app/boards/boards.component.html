@@ -5,3 +5,19 @@
 <span (click)='showToastr($event)'>click for toastr ' | '</span>
 
 <input [typeahead-widget]='{ source: typeaheadSource }' type="text">
+<hr>
+
+<form >
+  <input type="text" [class.has-error]="!plm.valid" 
+    ngControl="name" [(ngModel)]='username' required #plm="ngForm">
+  <input type="text" ngControl="street" minlength="3">
+  <input type="text" ngControl="city" maxlength="10">
+  <input type="text" ngControl="zip" pattern="[A-Za-z]{5}">
+  <div class='has-error' *ngIf="!plm.valid && !plm.pristine">name is invalid</div>
+  <div [hidden]="plm.valid || plm.pristine" class="alert alert-danger">
+          Name is required
+   </div>
+</form>
+
+
+
