@@ -5,6 +5,8 @@ import {TooltipDirective} from '../shared/tooltip/tooltip.directive';
 import {PopoverDirective} from '../shared/tooltip/popover.directive';
 import {TypeaheadDirective} from '../shared/typeahead/typeahead.directive';
 
+import { NumericValidator } from '../shared/validators/numeric';
+
 import {
   FORM_DIRECTIVES,
   FORM_PROVIDERS,
@@ -29,6 +31,7 @@ export class BoardsComponent implements OnInit {
     typeaheadSource: string[];
     form: ControlGroup;
     username: string;
+    
 
     constructor(private _toastr: ToastrService) {
         console.log(`This is ${BoardsComponent.pazoStatic}`);
@@ -41,15 +44,18 @@ export class BoardsComponent implements OnInit {
 
     ngOnInit(): void {
       this.typeaheadSource = ["p1a","p1a","p1b","p1b","p1c","p1c","p1c","p2f","p2f","pg","pgh","phh",];  
-      this.username = ''; 
+      this.username = 'hh'; 
       this.form = new ControlGroup({
         name: new Control(this.username, Validators.required),
         street: new Control('', Validators.minLength(3)),
         city: new Control('', Validators.maxLength(10)),
-        zip: new Control('', Validators.pattern('[A-Za-z]{5}'))
-      });       
+        zip: new Control('', Validators.pattern('[A-Za-z]{5}')),
+        nameSpecial: new Control(this.username, NumericValidator.isNumeric)
+      });            
       
-     // console.log('logs', this.form, this.form.controls, this.form.controls.name.valid ); 
+  
+      
+      console.log('logs',this.form.controls.nameSpecial,  this.form.controls.nameSpecial.valid  ); 
     }
     
     showToastr(message: string): void {

@@ -5,6 +5,7 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/route
 
 import { ProductListComponent } from './products/product-list.component';
 import { ProductService } from './products/product.service';
+import { NumericValidator } from './shared/validators/numeric';
 import { ToastrService } from './shared/toastr/toastr.service';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductDetailComponent } from './products/product-detail.component';
@@ -19,7 +20,8 @@ import { BikesComponent } from './bikes/bikes.component';
     providers: [ProductService,
                 ToastrService,
                 HTTP_PROVIDERS,
-                ROUTER_PROVIDERS]
+                ROUTER_PROVIDERS,
+                NumericValidator]
 })
 @RouteConfig([
     { path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true },

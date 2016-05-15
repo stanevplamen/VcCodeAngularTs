@@ -7,7 +7,7 @@
 <input [typeahead-widget]='{ source: typeaheadSource }' type="text">
 <hr>
 
-<form >
+<form>
   <input type="text" [class.has-error]="!plm.valid" 
     ngControl="name" [(ngModel)]='username' required #plm="ngForm">
   <input type="text" ngControl="street" minlength="3">
@@ -17,7 +17,15 @@
   <div [hidden]="plm.valid || plm.pristine" class="alert alert-danger">
           Name is required
    </div>
+    <input type="text" [class.has-error]="!special.valid" 
+    ngControl="nameSpecial" [(ngModel)]='username' NumericValidator.isNumeric #special="ngForm">
+
+   <div *ngIf="!form.controls.nameSpecial.valid">
+          The value is not a valid number
+    </div>
+    
 </form>
+
 
 
 
